@@ -100,15 +100,16 @@ buttons.forEach(button =>{
 			//pressedOperator = 'back';
 		}else if(e.target.classList.contains("number")){
 			classValue = "number";
-			pressedDigit  = e.target.value;
+			pressedDigit  = e.target.dataset.set;
 		}else if(e.target.classList.contains("operator")){
 			classValue = "operator";
-			pressedOperator  = e.target.value;
+			pressedOperator  = e.target.dataset.set;
+			console.log(pressedOperator);
 		}else if(e.target.classList.contains("equal")){
 			classValue = "equal";
 		}
 
 		displayNum();
-	});
+	}, true);
 });
 

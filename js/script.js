@@ -1,8 +1,10 @@
 const buttons = document.querySelectorAll(".button");
 const display = document.querySelector(".display");
 const history = document.querySelector(".history");
+let minus = document.getElementById("mySpan");
 let pressedDigit = '';
 let pressedOperator = '';
+let pressedMinus = '';
 let classValue;
 let firstNum = '';
 let secondNum = '';
@@ -63,8 +65,6 @@ function displayNum(){
 		let z = s.slice(0, s.length-1);
 		display.textContent = z;
 		firstNum = z;
-		//secondNum = z;
-		//sum = z;
 	}else if(classValue === 'back' && secondNum !== ''){
 		let s = display.textContent;
 		let z = s.slice(0, s.length-1);
@@ -107,8 +107,10 @@ buttons.forEach(button =>{
 			console.log(pressedOperator);
 		}else if(e.target.classList.contains("equal")){
 			classValue = "equal";
+		}else if(e.target.classList.contains("minus")){
+			classValue = "minus";
+			pressedMinus = e.target.dataset.set;
 		}
-
 		displayNum();
 	}, true);
 });

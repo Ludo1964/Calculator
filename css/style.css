@@ -50,6 +50,10 @@ main{
 	margin-right: 5%;
 }
 
+.toggleClass{
+	display: none;
+}
+
 .history{
 	font-size: 1rem;
 }

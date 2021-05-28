@@ -1,7 +1,6 @@
 const buttons = document.querySelectorAll(".button");
 const display = document.querySelector(".display");
 const history = document.querySelector(".history");
-let minus = document.getElementById("mySpan");
 let pressedDigit = '';
 let pressedOperator = '';
 let pressedMinus = '';
@@ -107,9 +106,6 @@ buttons.forEach(button =>{
 			console.log(pressedOperator);
 		}else if(e.target.classList.contains("equal")){
 			classValue = "equal";
-		}else if(e.target.classList.contains("minus")){
-			classValue = "minus";
-			pressedMinus = e.target.dataset.set;
 		}
 		displayNum();
 	}, true);
